@@ -1,5 +1,5 @@
 {
-  "name": "sleep-tracker",
+  "name": "subscription-tracker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
