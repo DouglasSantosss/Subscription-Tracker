@@ -1,3 +1,5 @@
 ## Entity Relationship Diagram (ERD)
 
-![Subscription Tracker ERD](./public/images/ERD.png)
+![Subscription Tracker ERD][def]
+
+[def]: ./public/images/ERD.png
