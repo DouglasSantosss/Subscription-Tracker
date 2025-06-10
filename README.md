@@ -1,2 +1,2 @@
 ## Entity Relationship Diagram (ERD)
-./public/images/erd.png
+![Crow's Foot ERD](./public/images/erd.png)
