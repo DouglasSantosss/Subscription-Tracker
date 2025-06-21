@@ -1,6 +1,6 @@
 const Subscription = require('../schemas/subscription');
 
-// Create a subscription
+
 async function createSubscription(data) {
   try {
     const sub = await Subscription.create(data);
@@ -10,7 +10,7 @@ async function createSubscription(data) {
   }
 }
 
-// Get subscriptions by user ID
+
 async function getSubscriptionsByUser(userId) {
   try {
     const subs = await Subscription.find({ userId });
@@ -20,7 +20,6 @@ async function getSubscriptionsByUser(userId) {
   }
 }
 
-// Update subscription by ID
 async function updateSubscription(id, updates) {
   try {
     const sub = await Subscription.findByIdAndUpdate(id, updates, { new: true });
@@ -30,7 +29,6 @@ async function updateSubscription(id, updates) {
   }
 }
 
-// Delete subscription by ID
 async function deleteSubscription(id) {
   try {
     await Subscription.findByIdAndDelete(id);

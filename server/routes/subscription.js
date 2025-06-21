@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const subController = require('../models/subscription');
 
-// CREATE
+
 router.post('/', async (req, res) => {
   try {
     const newSub = await subController.createSubscription(req.body);
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// READ (by user ID)
+
 router.get('/user/:userId', async (req, res) => {
   try {
     const subs = await subController.getSubscriptionsByUser(req.params.userId);
@@ -22,7 +22,7 @@ router.get('/user/:userId', async (req, res) => {
   }
 });
 
-// UPDATE
+
 router.put('/:id', async (req, res) => {
   try {
     const updated = await subController.updateSubscription(req.params.id, req.body);
@@ -32,7 +32,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE
+
 router.delete('/:id', async (req, res) => {
   try {
     await subController.deleteSubscription(req.params.id);
