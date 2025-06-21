@@ -4,42 +4,42 @@ const Payment = require('../models/payment');
 
 router
 .post('/', async (req, res) => {
-  try {
-    const payment = await Payment.create(req.body);
-    res.status(201).json(payment);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+    try {
+        const payment = await Payment.createPayment(req.body);
+        res.status(201).json(payment);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 })
 
 
-.get('/user/:userId', async (req, res) => {
-  try {
-    const payments = await Payment.find({ userId: req.params.userId }).populate('subscriptionId');
-    res.json(payments);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+.get('/', async (req, res) => {
+    try {
+        const payments = await Payment.getAllPayments();
+        res.json(payments);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 })
 
 
 .put('/:id', async (req, res) => {
-  try {
-    const updated = await Payment.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(updated);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+    try {
+        const updated = await Payment.updatePayment(req.params.id, req.body);
+        res.json(updated);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 })
 
 
 .delete('/:id', async (req, res) => {
-  try {
-    await Payment.findByIdAndDelete(req.params.id);
-    res.sendStatus(204);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+    try {
+        const deleted = await Payment.deletePayment(req.params.id);
+        res.json(deleted);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 });
 
 module.exports = router;

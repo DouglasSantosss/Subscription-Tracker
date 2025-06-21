@@ -43,7 +43,7 @@ async function updatePassword(id, password) {
 
 async function deleteUser(id) {
   await User.deleteOne({"_id": id});
-};
+}
 
 
 async function getUser(username) {

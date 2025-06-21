@@ -26,7 +26,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'index.h
 
 app.use('/user', userRoutes);
 app.use('/subscription', subRoutes); 
-app.use('/payments', paymentRoutes);
+app.use('/payment', paymentRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
