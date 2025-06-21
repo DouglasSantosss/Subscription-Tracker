@@ -17,8 +17,5 @@ async function deletePayment(id) {
 }
 
 module.exports = {
-  createPayment,
-  getPaymentsByUser,
-  updatePayment,
-  deletePayment
+  createPayment, getPaymentsByUser, updatePayment, deletePayment
 };

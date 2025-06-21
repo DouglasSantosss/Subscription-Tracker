@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Payment = require('../schemas/payment');
+const Payment = require('../models/payment');
 
 router
 .post('/', async (req, res) => {
@@ -13,7 +13,7 @@ router
 })
 
 
-.get('/:userId', async (req, res) => {
+.get('/user/:userId', async (req, res) => {
   try {
     const payments = await Payment.find({ userId: req.params.userId }).populate('subscriptionId');
     res.json(payments);

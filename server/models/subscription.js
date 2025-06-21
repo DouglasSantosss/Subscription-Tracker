@@ -38,8 +38,5 @@ async function deleteSubscription(id) {
 }
 
 module.exports = {
-  createSubscription,
-  getSubscriptionsByUser,
-  updateSubscription,
-  deleteSubscription
+  createSubscription, getSubscriptionsByUser, updateSubscription, deleteSubscription
 };
