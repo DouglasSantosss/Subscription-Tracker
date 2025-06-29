@@ -13,7 +13,7 @@ router
 })
 
 
-.get('/user/:userId', async (req, res) => {
+.get('/userId', async (req, res) => {
   try {
     const subs = await subController.getSubscriptionsByUser(req.params.userId);
     res.json(subs);
@@ -23,7 +23,7 @@ router
 })
 
 
-.put('/:id', async (req, res) => {
+.put('/userId', async (req, res) => {
   try {
     const updated = await subController.updateSubscription(req.params.id, req.body);
     res.json(updated);
@@ -33,7 +33,7 @@ router
 })
 
 
-.delete('/:id', async (req, res) => {
+.delete('/userId', async (req, res) => {
   try {
     await subController.deleteSubscription(req.params.id);
     res.send('Subscription deleted');

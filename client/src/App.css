@@ -1,0 +1,83 @@
+h1, h2, h3 {
+  color: #210be8;
+}
+
+label {
+  color: #ffffff; 
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('/SubPicture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+nav {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0366d6;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 12px 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fffbe6;
+}
+
+button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+

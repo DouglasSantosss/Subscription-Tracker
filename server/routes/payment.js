@@ -13,7 +13,7 @@ router
 })
 
 
-.get('/user/:userId', async (req, res) => {
+.get('/:id', async (req, res) => {
     try {
         const payments = await Payment.getAllPayments();
         res.json(payments);
