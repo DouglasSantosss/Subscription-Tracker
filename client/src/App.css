@@ -81,3 +81,24 @@ button:hover {
   background-color: #0056b3;
 }
 
+.about-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #333;
+}
+
+.about-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1aff;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
