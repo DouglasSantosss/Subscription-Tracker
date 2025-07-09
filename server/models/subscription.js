@@ -1,53 +1,39 @@
-
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const subscriptionSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  name: { type: String, required: true},
-  category: { type: String},
-  notes: { type: String},
-  cost: { type: Number, required: true}
-});
 
-module.exports = mongoose.model('Subscription', subscriptionSchema);
+const subscriptionSchema = new Schema({
+  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true},
+  name: {type: String, required: true},
+  category: String,
+  notes: String,
+  cost: Number
+}, { timestamps: true });
+
+
+const Subscription = mongoose.model('Subscription', subscriptionSchema);
 
 
 async function createSubscription(data) {
-  try {
-    const sub = await Subscription.create(data);
-    return sub;
-  } catch (err) {
-    throw err;
-  }
+  
+  return await Subscription.create(data);
 }
-
 
 async function getSubscriptionsByUser(userId) {
-  try {
-    const subs = await Subscription.find({ userId });
-    return subs;
-  } catch (err) {
-    throw err;
-  }
+  return await Subscription.find({ userId });
 }
 
-async function updateSubscription(id, updates) {
-  try {
-    const sub = await Subscription.findByIdAndUpdate(id, updates, { new: true });
-    return sub;
-  } catch (err) {
-    throw err;
-  }
+async function updateSubscription(id, data) {
+  return await Subscription.findByIdAndUpdate(id, data, { new: true });
 }
 
 async function deleteSubscription(id) {
-  try {
-    await Subscription.findByIdAndDelete(id);
-  } catch (err) {
-    throw err;
-  }
+  return await Subscription.findByIdAndDelete(id);
 }
 
 module.exports = {
-  createSubscription, getSubscriptionsByUser, updateSubscription, deleteSubscription
+  createSubscription,
+  getSubscriptionsByUser,
+  updateSubscription,
+  deleteSubscription
 };
